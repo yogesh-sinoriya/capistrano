@@ -696,3 +696,102 @@
     at Object.<anonymous> (/usr/local/lib/node_modules/npm/bin/npm-cli.js:92:3)
     at Module._compile (module.js:456:26)
     at Object.Module._extensions..js (module.js:474:10)
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-11-27 01:31:32 +0530 cap staging deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [4b9233b6] Running /usr/bin/env mkdir -p /tmp as deploy@172.17.0.2
+ DEBUG [4b9233b6] Command: /usr/bin/env mkdir -p /tmp
+  INFO [4b9233b6] Finished in 0.538 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-capistrano-staging-yogesh.sh 0.0%
+  INFO Uploading /tmp/git-ssh-capistrano-staging-yogesh.sh 100.0%
+  INFO [9370fe91] Running /usr/bin/env chmod 700 /tmp/git-ssh-capistrano-staging-yogesh.sh as deploy@172.17.0.2
+ DEBUG [9370fe91] Command: /usr/bin/env chmod 700 /tmp/git-ssh-capistrano-staging-yogesh.sh
+  INFO [9370fe91] Finished in 0.072 seconds with exit status 0 (successful).
+  INFO [fd04ec95] Running /usr/bin/env git ls-remote git@github.com:yogesh-sinoriya/capistrano.git HEAD as deploy@172.17.0.2
+ DEBUG [fd04ec95] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-capistrano-staging-yogesh.sh" ; /usr/bin/env git ls-remote git@github.com:yogesh-sinoriya/capistrano.git HEAD )
+ DEBUG [fd04ec95] 	307a267bd31c57fd0e0d9a1690b40bfddcaa4a70	HEAD
+  INFO [fd04ec95] Finished in 3.746 seconds with exit status 0 (successful).
+  INFO [405d5e20] Running /usr/bin/env mkdir -p /usr/share/nginx/node/shared /usr/share/nginx/node/releases as deploy@172.17.0.2
+ DEBUG [405d5e20] Command: /usr/bin/env mkdir -p /usr/share/nginx/node/shared /usr/share/nginx/node/releases
+  INFO [405d5e20] Finished in 0.042 seconds with exit status 0 (successful).
+  INFO [098b6351] Running /usr/bin/env mkdir -p /usr/share/nginx/node/shared/node_modules as deploy@172.17.0.2
+ DEBUG [098b6351] Command: /usr/bin/env mkdir -p /usr/share/nginx/node/shared/node_modules
+  INFO [098b6351] Finished in 0.043 seconds with exit status 0 (successful).
+ DEBUG [aae73bd4] Running [ -f /usr/share/nginx/node/current/REVISION ] as deploy@172.17.0.2
+ DEBUG [aae73bd4] Command: [ -f /usr/share/nginx/node/current/REVISION ]
+ DEBUG [aae73bd4] Finished in 0.042 seconds with exit status 0 (successful).
+ DEBUG [a5122492] Running /usr/bin/env cat /usr/share/nginx/node/current/REVISION 2>/dev/null as deploy@172.17.0.2
+ DEBUG [a5122492] Command: /usr/bin/env cat /usr/share/nginx/node/current/REVISION 2>/dev/null
+ DEBUG [a5122492] 	f803039d03c7ac67db2f35cf8091c326b9c17825
+ DEBUG [a5122492] Finished in 0.073 seconds with exit status 0 (successful).
+ DEBUG [cbcf1c5e] Running [ -f /usr/share/nginx/node/repo/HEAD ] as deploy@172.17.0.2
+ DEBUG [cbcf1c5e] Command: [ -f /usr/share/nginx/node/repo/HEAD ]
+ DEBUG [cbcf1c5e] Finished in 0.042 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /usr/share/nginx/node/repo
+ DEBUG [28fb8309] Running if test ! -d /usr/share/nginx/node/repo; then echo "Directory does not exist '/usr/share/nginx/node/repo'" 1>&2; false; fi as deploy@172.17.0.2
+ DEBUG [28fb8309] Command: if test ! -d /usr/share/nginx/node/repo; then echo "Directory does not exist '/usr/share/nginx/node/repo'" 1>&2; false; fi
+ DEBUG [28fb8309] Finished in 0.039 seconds with exit status 0 (successful).
+  INFO [00e0496d] Running /usr/bin/env git remote set-url origin git@github.com:yogesh-sinoriya/capistrano.git as deploy@172.17.0.2
+ DEBUG [00e0496d] Command: cd /usr/share/nginx/node/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-capistrano-staging-yogesh.sh" ; /usr/bin/env git remote set-url origin git@github.com:yogesh-sinoriya/capistrano.git )
+  INFO [00e0496d] Finished in 0.076 seconds with exit status 0 (successful).
+  INFO [20cec80d] Running /usr/bin/env git remote update --prune as deploy@172.17.0.2
+ DEBUG [20cec80d] Command: cd /usr/share/nginx/node/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-capistrano-staging-yogesh.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [20cec80d] 	Fetching origin
+ DEBUG [20cec80d] 	From github.com:yogesh-sinoriya/capistrano
+   fc8b6f0..3f93b3f  nodeapp    -> nodeapp
+  INFO [20cec80d] Finished in 4.029 seconds with exit status 0 (successful).
+ DEBUG [84caaf4b] Running if test ! -d /usr/share/nginx/node/repo; then echo "Directory does not exist '/usr/share/nginx/node/repo'" 1>&2; false; fi as deploy@172.17.0.2
+ DEBUG [84caaf4b] Command: if test ! -d /usr/share/nginx/node/repo; then echo "Directory does not exist '/usr/share/nginx/node/repo'" 1>&2; false; fi
+ DEBUG [84caaf4b] Finished in 0.041 seconds with exit status 0 (successful).
+  INFO [1bbc0bf0] Running /usr/bin/env mkdir -p /usr/share/nginx/node/releases/20171126200136 as deploy@172.17.0.2
+ DEBUG [1bbc0bf0] Command: cd /usr/share/nginx/node/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-capistrano-staging-yogesh.sh" ; /usr/bin/env mkdir -p /usr/share/nginx/node/releases/20171126200136 )
+  INFO [1bbc0bf0] Finished in 0.042 seconds with exit status 0 (successful).
+  INFO [37087f66] Running /usr/bin/env git archive nodeapp | /usr/bin/env tar -x -f - -C /usr/share/nginx/node/releases/20171126200136 as deploy@172.17.0.2
+ DEBUG [37087f66] Command: cd /usr/share/nginx/node/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-capistrano-staging-yogesh.sh" ; /usr/bin/env git archive nodeapp | /usr/bin/env tar -x -f - -C /usr/share/nginx/node/releases/20171126200136 )
+  INFO [37087f66] Finished in 0.144 seconds with exit status 0 (successful).
+ DEBUG [933837b1] Running if test ! -d /usr/share/nginx/node/repo; then echo "Directory does not exist '/usr/share/nginx/node/repo'" 1>&2; false; fi as deploy@172.17.0.2
+ DEBUG [933837b1] Command: if test ! -d /usr/share/nginx/node/repo; then echo "Directory does not exist '/usr/share/nginx/node/repo'" 1>&2; false; fi
+ DEBUG [933837b1] Finished in 0.041 seconds with exit status 0 (successful).
+ DEBUG [4ed93232] Running /usr/bin/env git rev-list --max-count=1 nodeapp as deploy@172.17.0.2
+ DEBUG [4ed93232] Command: cd /usr/share/nginx/node/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-capistrano-staging-yogesh.sh" ; /usr/bin/env git rev-list --max-count=1 nodeapp )
+ DEBUG [4ed93232] 	3f93b3ffa088ce5928a06a2ed3adc3a4c2e830ca
+ DEBUG [4ed93232] Finished in 0.043 seconds with exit status 0 (successful).
+ DEBUG [33fdbc08] Running if test ! -d /usr/share/nginx/node/releases/20171126200136; then echo "Directory does not exist '/usr/share/nginx/node/releases/20171126200136'" 1>&2; false; fi as deploy@172.17.0.2
+ DEBUG [33fdbc08] Command: if test ! -d /usr/share/nginx/node/releases/20171126200136; then echo "Directory does not exist '/usr/share/nginx/node/releases/20171126200136'" 1>&2; false; fi
+ DEBUG [33fdbc08] Finished in 0.040 seconds with exit status 0 (successful).
+  INFO [2f6ccdc4] Running /usr/bin/env echo "3f93b3ffa088ce5928a06a2ed3adc3a4c2e830ca" >> REVISION as deploy@172.17.0.2
+ DEBUG [2f6ccdc4] Command: cd /usr/share/nginx/node/releases/20171126200136 && /usr/bin/env echo "3f93b3ffa088ce5928a06a2ed3adc3a4c2e830ca" >> REVISION
+  INFO [2f6ccdc4] Finished in 0.053 seconds with exit status 0 (successful).
+  INFO [7c074fec] Running /usr/bin/env mkdir -p /usr/share/nginx/node/releases/20171126200136 as deploy@172.17.0.2
+ DEBUG [7c074fec] Command: /usr/bin/env mkdir -p /usr/share/nginx/node/releases/20171126200136
+  INFO [7c074fec] Finished in 0.043 seconds with exit status 0 (successful).
+ DEBUG [cfc7362f] Running [ -L /usr/share/nginx/node/releases/20171126200136/node_modules ] as deploy@172.17.0.2
+ DEBUG [cfc7362f] Command: [ -L /usr/share/nginx/node/releases/20171126200136/node_modules ]
+ DEBUG [cfc7362f] Finished in 0.043 seconds with exit status 1 (failed).
+ DEBUG [9d72b115] Running [ -d /usr/share/nginx/node/releases/20171126200136/node_modules ] as deploy@172.17.0.2
+ DEBUG [9d72b115] Command: [ -d /usr/share/nginx/node/releases/20171126200136/node_modules ]
+ DEBUG [9d72b115] Finished in 0.043 seconds with exit status 1 (failed).
+  INFO [5a91d722] Running /usr/bin/env ln -s /usr/share/nginx/node/shared/node_modules /usr/share/nginx/node/releases/20171126200136/node_modules as deploy@172.17.0.2
+ DEBUG [5a91d722] Command: /usr/bin/env ln -s /usr/share/nginx/node/shared/node_modules /usr/share/nginx/node/releases/20171126200136/node_modules
+  INFO [5a91d722] Finished in 0.041 seconds with exit status 0 (successful).
+ DEBUG [8e2e31df] Running if test ! -d /usr/share/nginx/node/releases/20171126200136; then echo "Directory does not exist '/usr/share/nginx/node/releases/20171126200136'" 1>&2; false; fi as deploy@172.17.0.2
+ DEBUG [8e2e31df] Command: if test ! -d /usr/share/nginx/node/releases/20171126200136; then echo "Directory does not exist '/usr/share/nginx/node/releases/20171126200136'" 1>&2; false; fi
+ DEBUG [8e2e31df] Finished in 0.042 seconds with exit status 0 (successful).
+  INFO [7aa47476] Running /usr/bin/env npm install --production --silent --no-progress as deploy@172.17.0.2
+ DEBUG [7aa47476] Command: cd /usr/share/nginx/node/releases/20171126200136 && /usr/bin/env npm install --production --silent --no-progress
+ DEBUG [7aa47476] 	
+ DEBUG [7aa47476] 	/usr/local/lib/node_modules/npm/lib/utils/unsupported.js:27
+ DEBUG [7aa47476] 	        console.error(`a bug known to break npm. Please update to at least ${r
+                  
+ DEBUG [7aa47476] 	    ^
+ DEBUG [7aa47476] 	SyntaxError: Unexpected token ILLEGAL
+    at Module._compile (module.js:439:25)
+    at Object.Module._extensions..js (module.js:474:10)
+    at Module.load (module.js:356:32)
+    at Function.Module._load (module.js:312:12)
+    at Module.require (module.js:364:17)
+    at require (module.js:380:17)
+    at /usr/local/lib/node_modules/npm/bin/npm-cli.js:19:21
+    at Object.<anonymous> (/usr/local/lib/node_modules/npm/bin/npm-cli.js:92:3)
+    at Module._compile (module.js:456:26)
+    at Object.Module._extensions..js (module.js:474:10)
