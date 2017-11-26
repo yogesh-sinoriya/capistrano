@@ -4,8 +4,6 @@ lock "~> 3.10.0"
 set :application, "capistrano"
 set :repo_url, 'git@github.com:yogesh-sinoriya/capistrano.git'
 set :user, "deploy"
-
-set :default_stage, "production"
 set :ssh_options, {:forward_agent => true}
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
