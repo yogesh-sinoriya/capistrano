@@ -2,7 +2,7 @@
 lock "~> 3.10.0"
 
 set :application, "capistrano-practice"
-set :repo_url, 'git@github.com:yogesh-sinoriya/capistrano-practice.git'
+set :repo_url, 'git@github.com:yogesh-sinoriya/capistrano.git'
 set :user, "deploy"
 set :ssh_options, {:forward_agent => true}
 # Default branch is :master
