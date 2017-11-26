@@ -40,3 +40,37 @@ set :ssh_options, {:forward_agent => true}
 
 # Uncomment the following to require manually verifying the host key before first deploy.
 # set :ssh_options, verify_host_key: :secure
+
+
+namespace :npm do
+
+	desc 'Start'
+    task :start do
+      on roles(:app), in: :groups, limit:1 do
+      	execute "cd /usr/share/nginx/node/current/ && npm start"
+        #execute :npm, :start, fetch(:app_command)
+      end
+    end
+
+    desc 'Restart'
+    task :restart do
+      on roles(:app), in: :groups, limit:1 do
+        execute "cd /usr/share/nginx/node/current/ && npm restart"
+        #execute :npm,:restart, fetch(:app_command)
+      end
+    end
+    desc 'Stop'
+    task :stop do
+      on roles(:app), in: :groups, limit:1 do
+      	execute "cd /usr/share/nginx/node/current/ && npm stop"
+        #execute :npm, :stop, fetch(:app_command)
+      end
+    end
+    desc 'StopAll'
+    task :stopall do
+      on roles(:app), in: :groups, limit:1 do
+      	execute "cd /usr/share/nginx/node/current/ && npm stopall"
+        #execute :npm, :stop, fetch(:app_command)
+      end
+    end
+end
