@@ -1089,3 +1089,305 @@
     at Object.<anonymous> (/usr/local/lib/node_modules/npm/bin/npm-cli.js:92:3)
     at Module._compile (module.js:456:26)
     at Object.Module._extensions..js (module.js:474:10)
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-11-27 10:25:06 +0530 cap staging deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [453210d7] Running /usr/bin/env mkdir -p /tmp as deploy@172.17.0.2
+ DEBUG [453210d7] Command: /usr/bin/env mkdir -p /tmp
+  INFO [453210d7] Finished in 0.148 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-capistrano-staging-cloud.sh 0.0%
+  INFO Uploading /tmp/git-ssh-capistrano-staging-cloud.sh 100.0%
+  INFO [d929d5ff] Running /usr/bin/env chmod 700 /tmp/git-ssh-capistrano-staging-cloud.sh as deploy@172.17.0.2
+ DEBUG [d929d5ff] Command: /usr/bin/env chmod 700 /tmp/git-ssh-capistrano-staging-cloud.sh
+  INFO [d929d5ff] Finished in 0.044 seconds with exit status 0 (successful).
+  INFO [e235ef89] Running /usr/bin/env git ls-remote git@github.com:yogesh-sinoriya/capistrano.git HEAD as deploy@172.17.0.2
+ DEBUG [e235ef89] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-capistrano-staging-cloud.sh" ; /usr/bin/env git ls-remote git@github.com:yogesh-sinoriya/capistrano.git HEAD )
+ DEBUG [e235ef89] 	307a267bd31c57fd0e0d9a1690b40bfddcaa4a70	HEAD
+  INFO [e235ef89] Finished in 3.827 seconds with exit status 0 (successful).
+  INFO [8eeed8d6] Running /usr/bin/env mkdir -p /usr/share/nginx/node/shared /usr/share/nginx/node/releases as deploy@172.17.0.2
+ DEBUG [8eeed8d6] Command: /usr/bin/env mkdir -p /usr/share/nginx/node/shared /usr/share/nginx/node/releases
+  INFO [8eeed8d6] Finished in 0.041 seconds with exit status 0 (successful).
+  INFO [7cecc5eb] Running /usr/bin/env mkdir -p /usr/share/nginx/node/shared/node_modules as deploy@172.17.0.2
+ DEBUG [7cecc5eb] Command: /usr/bin/env mkdir -p /usr/share/nginx/node/shared/node_modules
+  INFO [7cecc5eb] Finished in 0.054 seconds with exit status 0 (successful).
+ DEBUG [2347be0c] Running [ -f /usr/share/nginx/node/current/REVISION ] as deploy@172.17.0.2
+ DEBUG [2347be0c] Command: [ -f /usr/share/nginx/node/current/REVISION ]
+ DEBUG [2347be0c] Finished in 0.040 seconds with exit status 0 (successful).
+ DEBUG [5be8f2dd] Running /usr/bin/env cat /usr/share/nginx/node/current/REVISION 2>/dev/null as deploy@172.17.0.2
+ DEBUG [5be8f2dd] Command: /usr/bin/env cat /usr/share/nginx/node/current/REVISION 2>/dev/null
+ DEBUG [5be8f2dd] 	307a267bd31c57fd0e0d9a1690b40bfddcaa4a70
+ DEBUG [5be8f2dd] Finished in 0.041 seconds with exit status 0 (successful).
+ DEBUG [553a21c7] Running [ -f /usr/share/nginx/node/repo/HEAD ] as deploy@172.17.0.2
+ DEBUG [553a21c7] Command: [ -f /usr/share/nginx/node/repo/HEAD ]
+ DEBUG [553a21c7] Finished in 0.042 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /usr/share/nginx/node/repo
+ DEBUG [659df393] Running if test ! -d /usr/share/nginx/node/repo; then echo "Directory does not exist '/usr/share/nginx/node/repo'" 1>&2; false; fi as deploy@172.17.0.2
+ DEBUG [659df393] Command: if test ! -d /usr/share/nginx/node/repo; then echo "Directory does not exist '/usr/share/nginx/node/repo'" 1>&2; false; fi
+ DEBUG [659df393] Finished in 0.039 seconds with exit status 0 (successful).
+  INFO [906ed926] Running /usr/bin/env git remote set-url origin git@github.com:yogesh-sinoriya/capistrano.git as deploy@172.17.0.2
+ DEBUG [906ed926] Command: cd /usr/share/nginx/node/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-capistrano-staging-cloud.sh" ; /usr/bin/env git remote set-url origin git@github.com:yogesh-sinoriya/capistrano.git )
+  INFO [906ed926] Finished in 0.042 seconds with exit status 0 (successful).
+  INFO [d7a3fc7c] Running /usr/bin/env git remote update --prune as deploy@172.17.0.2
+ DEBUG [d7a3fc7c] Command: cd /usr/share/nginx/node/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-capistrano-staging-cloud.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [d7a3fc7c] 	Fetching origin
+  INFO [d7a3fc7c] Finished in 10.916 seconds with exit status 0 (successful).
+ DEBUG [1c72670a] Running if test ! -d /usr/share/nginx/node/repo; then echo "Directory does not exist '/usr/share/nginx/node/repo'" 1>&2; false; fi as deploy@172.17.0.2
+ DEBUG [1c72670a] Command: if test ! -d /usr/share/nginx/node/repo; then echo "Directory does not exist '/usr/share/nginx/node/repo'" 1>&2; false; fi
+ DEBUG [1c72670a] Finished in 0.042 seconds with exit status 0 (successful).
+  INFO [a7bc509d] Running /usr/bin/env mkdir -p /usr/share/nginx/node/releases/20171127045511 as deploy@172.17.0.2
+ DEBUG [a7bc509d] Command: cd /usr/share/nginx/node/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-capistrano-staging-cloud.sh" ; /usr/bin/env mkdir -p /usr/share/nginx/node/releases/20171127045511 )
+  INFO [a7bc509d] Finished in 0.041 seconds with exit status 0 (successful).
+  INFO [8cbdf75a] Running /usr/bin/env git archive nodeapp | /usr/bin/env tar -x -f - -C /usr/share/nginx/node/releases/20171127045511 as deploy@172.17.0.2
+ DEBUG [8cbdf75a] Command: cd /usr/share/nginx/node/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-capistrano-staging-cloud.sh" ; /usr/bin/env git archive nodeapp | /usr/bin/env tar -x -f - -C /usr/share/nginx/node/releases/20171127045511 )
+  INFO [8cbdf75a] Finished in 0.045 seconds with exit status 0 (successful).
+ DEBUG [c4fa4326] Running if test ! -d /usr/share/nginx/node/repo; then echo "Directory does not exist '/usr/share/nginx/node/repo'" 1>&2; false; fi as deploy@172.17.0.2
+ DEBUG [c4fa4326] Command: if test ! -d /usr/share/nginx/node/repo; then echo "Directory does not exist '/usr/share/nginx/node/repo'" 1>&2; false; fi
+ DEBUG [c4fa4326] Finished in 0.040 seconds with exit status 0 (successful).
+ DEBUG [54e13f41] Running /usr/bin/env git rev-list --max-count=1 nodeapp as deploy@172.17.0.2
+ DEBUG [54e13f41] Command: cd /usr/share/nginx/node/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-capistrano-staging-cloud.sh" ; /usr/bin/env git rev-list --max-count=1 nodeapp )
+ DEBUG [54e13f41] 	90943459ef53f5b7a81a427df53b9184c31c6555
+ DEBUG [54e13f41] Finished in 0.042 seconds with exit status 0 (successful).
+ DEBUG [8c686b07] Running if test ! -d /usr/share/nginx/node/releases/20171127045511; then echo "Directory does not exist '/usr/share/nginx/node/releases/20171127045511'" 1>&2; false; fi as deploy@172.17.0.2
+ DEBUG [8c686b07] Command: if test ! -d /usr/share/nginx/node/releases/20171127045511; then echo "Directory does not exist '/usr/share/nginx/node/releases/20171127045511'" 1>&2; false; fi
+ DEBUG [8c686b07] Finished in 0.041 seconds with exit status 0 (successful).
+  INFO [c4aed1c3] Running /usr/bin/env echo "90943459ef53f5b7a81a427df53b9184c31c6555" >> REVISION as deploy@172.17.0.2
+ DEBUG [c4aed1c3] Command: cd /usr/share/nginx/node/releases/20171127045511 && /usr/bin/env echo "90943459ef53f5b7a81a427df53b9184c31c6555" >> REVISION
+  INFO [c4aed1c3] Finished in 0.041 seconds with exit status 0 (successful).
+  INFO [b42be59c] Running /usr/bin/env mkdir -p /usr/share/nginx/node/releases/20171127045511 as deploy@172.17.0.2
+ DEBUG [b42be59c] Command: /usr/bin/env mkdir -p /usr/share/nginx/node/releases/20171127045511
+  INFO [b42be59c] Finished in 0.043 seconds with exit status 0 (successful).
+ DEBUG [cd367cee] Running [ -L /usr/share/nginx/node/releases/20171127045511/node_modules ] as deploy@172.17.0.2
+ DEBUG [cd367cee] Command: [ -L /usr/share/nginx/node/releases/20171127045511/node_modules ]
+ DEBUG [cd367cee] Finished in 0.042 seconds with exit status 1 (failed).
+ DEBUG [3c39b167] Running [ -d /usr/share/nginx/node/releases/20171127045511/node_modules ] as deploy@172.17.0.2
+ DEBUG [3c39b167] Command: [ -d /usr/share/nginx/node/releases/20171127045511/node_modules ]
+ DEBUG [3c39b167] Finished in 0.040 seconds with exit status 1 (failed).
+  INFO [c6502929] Running /usr/bin/env ln -s /usr/share/nginx/node/shared/node_modules /usr/share/nginx/node/releases/20171127045511/node_modules as deploy@172.17.0.2
+ DEBUG [c6502929] Command: /usr/bin/env ln -s /usr/share/nginx/node/shared/node_modules /usr/share/nginx/node/releases/20171127045511/node_modules
+  INFO [c6502929] Finished in 0.041 seconds with exit status 0 (successful).
+ DEBUG [0048574a] Running if test ! -d /usr/share/nginx/node/releases/20171127045511; then echo "Directory does not exist '/usr/share/nginx/node/releases/20171127045511'" 1>&2; false; fi as deploy@172.17.0.2
+ DEBUG [0048574a] Command: if test ! -d /usr/share/nginx/node/releases/20171127045511; then echo "Directory does not exist '/usr/share/nginx/node/releases/20171127045511'" 1>&2; false; fi
+ DEBUG [0048574a] Finished in 0.047 seconds with exit status 0 (successful).
+  INFO [8ab1d8c0] Running /usr/bin/env npm install --production --silent --no-progress as deploy@172.17.0.2
+ DEBUG [8ab1d8c0] Command: cd /usr/share/nginx/node/releases/20171127045511 && /usr/bin/env npm install --production --silent --no-progress
+ DEBUG [8ab1d8c0] 	express@4.16.2 node_modules/express
+├── escape-html@1.0.3
+├── array-flatten@1.1.1
+├── path-to-regexp@0.1.7
+├── setprototypeof@1.1.0
+├── cookie-signature@1.0.6
+├── utils-merge@1.0.1
+├── merge-descriptors@1.0.1
+├── methods@1.1.2
+├── encodeurl@1.0.1
+├── range-parser@1.2.0
+├── vary@1.1.2
+├── fresh@0.5.2
+├── parseurl@1.3.2
+├── content-type@1.0.4
+├── etag@1.8.1
+├── statuses@1.3.1
+├── cookie@0.3.1
+├── content-disposition@0.5.2
+├── serve-static@1.13.1
+├── safe-buffer@5.1.1
+├── depd@1.1.1
+├── qs@6.5.1
+├── finalhandler@1.1.0 (unpipe@1.0.0)
+├── proxy-addr@2.0.2 (forwarded@0.1.2, ipaddr.js@1.5.2)
+├── on-finished@2.3.0 (ee-first@1.1.1)
+├── debug@2.6.9 (ms@2.0.0)
+├── type-is@1.6.15 (media-typer@0.3.0, mime-types@2.1.17)
+├── accepts@1.3.4 (negotiator@0.6.1, mime-types@2.1.17)
+├── send@0.16.1 (ms@2.0.0, destroy@1.0.4, mime@1.4.1, http-errors@1.6.2)
+└── body-parser@1.18.2 (bytes@3.0.0, iconv-lite@0.4.19, raw-body@2.3.2, http-errors@1.6.2)
+
+forever@0.15.3 node_modules/forever
+├── object-assign@3.0.0
+├── path-is-absolute@1.0.1
+├── clone@1.0.3
+├── colors@0.6.2
+├── timespan@2.3.0
+├── nssocket@0.5.3 (eventemitter2@0.4.14, lazy@1.0.11)
+├── optimist@0.6.1 (wordwrap@0.0.3, minimist@0.0.10)
+├── cliff@0.1.10 (eyes@0.1.8, colors@1.0.3)
+├── prettyjson@1.2.1 (colors@1.1.2, minimist@1.2.0)
+├── winston@0.8.3 (cycle@1.0.3, stack-trace@0.0.10, eyes@0.1.8, isstream@0.1.2, async@0.2.10, pkginfo@0.3.1)
+├── nconf@0.6.9 (ini@1.3.5, async@0.2.9, optimist@0.6.0)
+├── shush@1.0.0 (strip-json-comments@0.1.3, caller@0.0.1)
+├── flatiron@0.4.3 (optimist@0.6.0, director@1.2.7, broadway@0.3.6, prompt@0.2.14)
+├── utile@0.2.1 (deep-equal@1.0.1, ncp@0.4.2, async@0.2.10, i@0.3.6, mkdirp@0.5.1, rimraf@2.6.2)
+└── forever-monitor@1.7.1 (ps-tree@0.0.3, broadway@0.3.6, minimatch@3.0.4, chokidar@1.7.0)
+  INFO [8ab1d8c0] Finished in 15.378 seconds with exit status 0 (successful).
+  INFO [03642070] Running /usr/bin/env ln -s /usr/share/nginx/node/releases/20171127045511 /usr/share/nginx/node/releases/current as deploy@172.17.0.2
+ DEBUG [03642070] Command: /usr/bin/env ln -s /usr/share/nginx/node/releases/20171127045511 /usr/share/nginx/node/releases/current
+  INFO [03642070] Finished in 0.041 seconds with exit status 0 (successful).
+  INFO [653369a9] Running /usr/bin/env mv /usr/share/nginx/node/releases/current /usr/share/nginx/node as deploy@172.17.0.2
+ DEBUG [653369a9] Command: /usr/bin/env mv /usr/share/nginx/node/releases/current /usr/share/nginx/node
+  INFO [653369a9] Finished in 0.040 seconds with exit status 0 (successful).
+ DEBUG [b0b00318] Running /usr/bin/env ls -x /usr/share/nginx/node/releases as deploy@172.17.0.2
+ DEBUG [b0b00318] Command: /usr/bin/env ls -x /usr/share/nginx/node/releases
+ DEBUG [b0b00318] 	20171124100056	20171124100508	20171127045309	20171127045511
+ DEBUG [b0b00318] Finished in 0.044 seconds with exit status 0 (successful).
+  INFO Keeping 3 of 4 deployed releases on 172.17.0.2
+ DEBUG [3d6bbbe4] Running [ -d /usr/share/nginx/node/current ] as deploy@172.17.0.2
+ DEBUG [3d6bbbe4] Command: [ -d /usr/share/nginx/node/current ]
+ DEBUG [3d6bbbe4] Finished in 0.042 seconds with exit status 0 (successful).
+ DEBUG [26da8e9c] Running /usr/bin/env readlink /usr/share/nginx/node/current as deploy@172.17.0.2
+ DEBUG [26da8e9c] Command: /usr/bin/env readlink /usr/share/nginx/node/current
+ DEBUG [26da8e9c] 	/usr/share/nginx/node/releases/20171127045511
+ DEBUG [26da8e9c] Finished in 0.041 seconds with exit status 0 (successful).
+  INFO [e04ec510] Running /usr/bin/env rm -rf /usr/share/nginx/node/releases/20171124100056 as deploy@172.17.0.2
+ DEBUG [e04ec510] Command: /usr/bin/env rm -rf /usr/share/nginx/node/releases/20171124100056
+  INFO [e04ec510] Finished in 0.062 seconds with exit status 0 (successful).
+ DEBUG [1f2c8da3] Running if test ! -d /usr/share/nginx/node/releases; then echo "Directory does not exist '/usr/share/nginx/node/releases'" 1>&2; false; fi as deploy@172.17.0.2
+ DEBUG [1f2c8da3] Command: if test ! -d /usr/share/nginx/node/releases; then echo "Directory does not exist '/usr/share/nginx/node/releases'" 1>&2; false; fi
+ DEBUG [1f2c8da3] Finished in 0.039 seconds with exit status 0 (successful).
+  INFO [5aa6932a] Running /usr/bin/env echo "Branch nodeapp (at 90943459ef53f5b7a81a427df53b9184c31c6555) deployed as release 20171127045511 by cloud" >> /usr/share/nginx/node/revisions.log as deploy@172.17.0.2
+ DEBUG [5aa6932a] Command: cd /usr/share/nginx/node/releases && /usr/bin/env echo "Branch nodeapp (at 90943459ef53f5b7a81a427df53b9184c31c6555) deployed as release 20171127045511 by cloud" >> /usr/share/nginx/node/revisions.log
+  INFO [5aa6932a] Finished in 0.040 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-11-27 10:25:46 +0530 cap staging npm:start
+  INFO ---------------------------------------------------------------------------
+  INFO [8b75b4b3] Running cd /usr/share/nginx/node/current/ && npm start as deploy@172.17.0.2
+ DEBUG [8b75b4b3] Command: cd /usr/share/nginx/node/current/ && npm start
+  INFO [8b75b4b3] Finished in 0.403 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-11-27 10:26:22 +0530 cap staging npm:start
+  INFO ---------------------------------------------------------------------------
+  INFO [231646cb] Running cd /usr/share/nginx/node/current/ && npm start as deploy@172.17.0.2
+ DEBUG [231646cb] Command: cd /usr/share/nginx/node/current/ && npm start
+  INFO [231646cb] Finished in 0.382 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-11-27 10:26:54 +0530 cap staging npm:stop
+  INFO ---------------------------------------------------------------------------
+  INFO [abc155bf] Running cd /usr/share/nginx/node/current/ && npm stop as deploy@172.17.0.2
+ DEBUG [abc155bf] Command: cd /usr/share/nginx/node/current/ && npm stop
+  INFO [abc155bf] Finished in 0.384 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-11-27 10:27:05 +0530 cap staging npm:start
+  INFO ---------------------------------------------------------------------------
+  INFO [065f0764] Running cd /usr/share/nginx/node/current/ && npm start as deploy@172.17.0.2
+ DEBUG [065f0764] Command: cd /usr/share/nginx/node/current/ && npm start
+  INFO [065f0764] Finished in 0.374 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-11-27 10:27:11 +0530 cap staging npm:start
+  INFO ---------------------------------------------------------------------------
+  INFO [6969ebf9] Running cd /usr/share/nginx/node/current/ && npm start as deploy@172.17.0.2
+ DEBUG [6969ebf9] Command: cd /usr/share/nginx/node/current/ && npm start
+  INFO [6969ebf9] Finished in 0.369 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-11-27 10:27:41 +0530 cap staging deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [eab4827e] Running /usr/bin/env mkdir -p /tmp as deploy@172.17.0.2
+ DEBUG [eab4827e] Command: /usr/bin/env mkdir -p /tmp
+  INFO [eab4827e] Finished in 0.147 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-capistrano-staging-cloud.sh 0.0%
+  INFO Uploading /tmp/git-ssh-capistrano-staging-cloud.sh 100.0%
+  INFO [7ffe014e] Running /usr/bin/env chmod 700 /tmp/git-ssh-capistrano-staging-cloud.sh as deploy@172.17.0.2
+ DEBUG [7ffe014e] Command: /usr/bin/env chmod 700 /tmp/git-ssh-capistrano-staging-cloud.sh
+  INFO [7ffe014e] Finished in 0.043 seconds with exit status 0 (successful).
+  INFO [e82c00e5] Running /usr/bin/env git ls-remote git@github.com:yogesh-sinoriya/capistrano.git HEAD as deploy@172.17.0.2
+ DEBUG [e82c00e5] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-capistrano-staging-cloud.sh" ; /usr/bin/env git ls-remote git@github.com:yogesh-sinoriya/capistrano.git HEAD )
+ DEBUG [e82c00e5] 	307a267bd31c57fd0e0d9a1690b40bfddcaa4a70	HEAD
+  INFO [e82c00e5] Finished in 3.826 seconds with exit status 0 (successful).
+  INFO [7224a7f4] Running /usr/bin/env mkdir -p /usr/share/nginx/node/shared /usr/share/nginx/node/releases as deploy@172.17.0.2
+ DEBUG [7224a7f4] Command: /usr/bin/env mkdir -p /usr/share/nginx/node/shared /usr/share/nginx/node/releases
+  INFO [7224a7f4] Finished in 0.040 seconds with exit status 0 (successful).
+  INFO [db3cc20d] Running /usr/bin/env mkdir -p /usr/share/nginx/node/shared/node_modules as deploy@172.17.0.2
+ DEBUG [db3cc20d] Command: /usr/bin/env mkdir -p /usr/share/nginx/node/shared/node_modules
+  INFO [db3cc20d] Finished in 0.043 seconds with exit status 0 (successful).
+ DEBUG [90979a63] Running [ -f /usr/share/nginx/node/current/REVISION ] as deploy@172.17.0.2
+ DEBUG [90979a63] Command: [ -f /usr/share/nginx/node/current/REVISION ]
+ DEBUG [90979a63] Finished in 0.042 seconds with exit status 0 (successful).
+ DEBUG [f1234200] Running /usr/bin/env cat /usr/share/nginx/node/current/REVISION 2>/dev/null as deploy@172.17.0.2
+ DEBUG [f1234200] Command: /usr/bin/env cat /usr/share/nginx/node/current/REVISION 2>/dev/null
+ DEBUG [f1234200] 	90943459ef53f5b7a81a427df53b9184c31c6555
+ DEBUG [f1234200] Finished in 0.041 seconds with exit status 0 (successful).
+ DEBUG [d8a55f41] Running [ -f /usr/share/nginx/node/repo/HEAD ] as deploy@172.17.0.2
+ DEBUG [d8a55f41] Command: [ -f /usr/share/nginx/node/repo/HEAD ]
+ DEBUG [d8a55f41] Finished in 0.042 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /usr/share/nginx/node/repo
+ DEBUG [1c0b97df] Running if test ! -d /usr/share/nginx/node/repo; then echo "Directory does not exist '/usr/share/nginx/node/repo'" 1>&2; false; fi as deploy@172.17.0.2
+ DEBUG [1c0b97df] Command: if test ! -d /usr/share/nginx/node/repo; then echo "Directory does not exist '/usr/share/nginx/node/repo'" 1>&2; false; fi
+ DEBUG [1c0b97df] Finished in 0.039 seconds with exit status 0 (successful).
+  INFO [364a234c] Running /usr/bin/env git remote set-url origin git@github.com:yogesh-sinoriya/capistrano.git as deploy@172.17.0.2
+ DEBUG [364a234c] Command: cd /usr/share/nginx/node/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-capistrano-staging-cloud.sh" ; /usr/bin/env git remote set-url origin git@github.com:yogesh-sinoriya/capistrano.git )
+  INFO [364a234c] Finished in 0.042 seconds with exit status 0 (successful).
+  INFO [7b1028c4] Running /usr/bin/env git remote update --prune as deploy@172.17.0.2
+ DEBUG [7b1028c4] Command: cd /usr/share/nginx/node/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-capistrano-staging-cloud.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [7b1028c4] 	Fetching origin
+  INFO [7b1028c4] Finished in 3.982 seconds with exit status 0 (successful).
+ DEBUG [b23ef76d] Running if test ! -d /usr/share/nginx/node/repo; then echo "Directory does not exist '/usr/share/nginx/node/repo'" 1>&2; false; fi as deploy@172.17.0.2
+ DEBUG [b23ef76d] Command: if test ! -d /usr/share/nginx/node/repo; then echo "Directory does not exist '/usr/share/nginx/node/repo'" 1>&2; false; fi
+ DEBUG [b23ef76d] Finished in 0.040 seconds with exit status 0 (successful).
+  INFO [1e2601d3] Running /usr/bin/env mkdir -p /usr/share/nginx/node/releases/20171127045745 as deploy@172.17.0.2
+ DEBUG [1e2601d3] Command: cd /usr/share/nginx/node/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-capistrano-staging-cloud.sh" ; /usr/bin/env mkdir -p /usr/share/nginx/node/releases/20171127045745 )
+  INFO [1e2601d3] Finished in 0.044 seconds with exit status 0 (successful).
+  INFO [8250a3c6] Running /usr/bin/env git archive nodeapp | /usr/bin/env tar -x -f - -C /usr/share/nginx/node/releases/20171127045745 as deploy@172.17.0.2
+ DEBUG [8250a3c6] Command: cd /usr/share/nginx/node/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-capistrano-staging-cloud.sh" ; /usr/bin/env git archive nodeapp | /usr/bin/env tar -x -f - -C /usr/share/nginx/node/releases/20171127045745 )
+  INFO [8250a3c6] Finished in 0.046 seconds with exit status 0 (successful).
+ DEBUG [91d25df4] Running if test ! -d /usr/share/nginx/node/repo; then echo "Directory does not exist '/usr/share/nginx/node/repo'" 1>&2; false; fi as deploy@172.17.0.2
+ DEBUG [91d25df4] Command: if test ! -d /usr/share/nginx/node/repo; then echo "Directory does not exist '/usr/share/nginx/node/repo'" 1>&2; false; fi
+ DEBUG [91d25df4] Finished in 0.039 seconds with exit status 0 (successful).
+ DEBUG [3f02c303] Running /usr/bin/env git rev-list --max-count=1 nodeapp as deploy@172.17.0.2
+ DEBUG [3f02c303] Command: cd /usr/share/nginx/node/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-capistrano-staging-cloud.sh" ; /usr/bin/env git rev-list --max-count=1 nodeapp )
+ DEBUG [3f02c303] 	90943459ef53f5b7a81a427df53b9184c31c6555
+ DEBUG [3f02c303] Finished in 0.042 seconds with exit status 0 (successful).
+ DEBUG [c11ef0c5] Running if test ! -d /usr/share/nginx/node/releases/20171127045745; then echo "Directory does not exist '/usr/share/nginx/node/releases/20171127045745'" 1>&2; false; fi as deploy@172.17.0.2
+ DEBUG [c11ef0c5] Command: if test ! -d /usr/share/nginx/node/releases/20171127045745; then echo "Directory does not exist '/usr/share/nginx/node/releases/20171127045745'" 1>&2; false; fi
+ DEBUG [c11ef0c5] Finished in 0.042 seconds with exit status 0 (successful).
+  INFO [d131a54f] Running /usr/bin/env echo "90943459ef53f5b7a81a427df53b9184c31c6555" >> REVISION as deploy@172.17.0.2
+ DEBUG [d131a54f] Command: cd /usr/share/nginx/node/releases/20171127045745 && /usr/bin/env echo "90943459ef53f5b7a81a427df53b9184c31c6555" >> REVISION
+  INFO [d131a54f] Finished in 0.041 seconds with exit status 0 (successful).
+  INFO [b7666a19] Running /usr/bin/env mkdir -p /usr/share/nginx/node/releases/20171127045745 as deploy@172.17.0.2
+ DEBUG [b7666a19] Command: /usr/bin/env mkdir -p /usr/share/nginx/node/releases/20171127045745
+  INFO [b7666a19] Finished in 0.043 seconds with exit status 0 (successful).
+ DEBUG [7cbaf2b7] Running [ -L /usr/share/nginx/node/releases/20171127045745/node_modules ] as deploy@172.17.0.2
+ DEBUG [7cbaf2b7] Command: [ -L /usr/share/nginx/node/releases/20171127045745/node_modules ]
+ DEBUG [7cbaf2b7] Finished in 0.042 seconds with exit status 1 (failed).
+ DEBUG [ac30c85f] Running [ -d /usr/share/nginx/node/releases/20171127045745/node_modules ] as deploy@172.17.0.2
+ DEBUG [ac30c85f] Command: [ -d /usr/share/nginx/node/releases/20171127045745/node_modules ]
+ DEBUG [ac30c85f] Finished in 0.040 seconds with exit status 1 (failed).
+  INFO [2be12569] Running /usr/bin/env ln -s /usr/share/nginx/node/shared/node_modules /usr/share/nginx/node/releases/20171127045745/node_modules as deploy@172.17.0.2
+ DEBUG [2be12569] Command: /usr/bin/env ln -s /usr/share/nginx/node/shared/node_modules /usr/share/nginx/node/releases/20171127045745/node_modules
+  INFO [2be12569] Finished in 0.041 seconds with exit status 0 (successful).
+ DEBUG [f4065e02] Running if test ! -d /usr/share/nginx/node/releases/20171127045745; then echo "Directory does not exist '/usr/share/nginx/node/releases/20171127045745'" 1>&2; false; fi as deploy@172.17.0.2
+ DEBUG [f4065e02] Command: if test ! -d /usr/share/nginx/node/releases/20171127045745; then echo "Directory does not exist '/usr/share/nginx/node/releases/20171127045745'" 1>&2; false; fi
+ DEBUG [f4065e02] Finished in 0.042 seconds with exit status 0 (successful).
+  INFO [e39c0ceb] Running /usr/bin/env npm install --production --silent --no-progress as deploy@172.17.0.2
+ DEBUG [e39c0ceb] Command: cd /usr/share/nginx/node/releases/20171127045745 && /usr/bin/env npm install --production --silent --no-progress
+  INFO [e39c0ceb] Finished in 0.615 seconds with exit status 0 (successful).
+  INFO [3dd0a630] Running /usr/bin/env ln -s /usr/share/nginx/node/releases/20171127045745 /usr/share/nginx/node/releases/current as deploy@172.17.0.2
+ DEBUG [3dd0a630] Command: /usr/bin/env ln -s /usr/share/nginx/node/releases/20171127045745 /usr/share/nginx/node/releases/current
+  INFO [3dd0a630] Finished in 0.040 seconds with exit status 0 (successful).
+  INFO [7fcb0994] Running /usr/bin/env mv /usr/share/nginx/node/releases/current /usr/share/nginx/node as deploy@172.17.0.2
+ DEBUG [7fcb0994] Command: /usr/bin/env mv /usr/share/nginx/node/releases/current /usr/share/nginx/node
+  INFO [7fcb0994] Finished in 0.043 seconds with exit status 0 (successful).
+ DEBUG [bd692f7a] Running /usr/bin/env ls -x /usr/share/nginx/node/releases as deploy@172.17.0.2
+ DEBUG [bd692f7a] Command: /usr/bin/env ls -x /usr/share/nginx/node/releases
+ DEBUG [bd692f7a] 	20171124100508	20171127045309	20171127045511	20171127045745
+ DEBUG [bd692f7a] Finished in 0.044 seconds with exit status 0 (successful).
+  INFO Keeping 3 of 4 deployed releases on 172.17.0.2
+ DEBUG [91d9e78b] Running [ -d /usr/share/nginx/node/current ] as deploy@172.17.0.2
+ DEBUG [91d9e78b] Command: [ -d /usr/share/nginx/node/current ]
+ DEBUG [91d9e78b] Finished in 0.042 seconds with exit status 0 (successful).
+ DEBUG [c2904ff7] Running /usr/bin/env readlink /usr/share/nginx/node/current as deploy@172.17.0.2
+ DEBUG [c2904ff7] Command: /usr/bin/env readlink /usr/share/nginx/node/current
+ DEBUG [c2904ff7] 	/usr/share/nginx/node/releases/20171127045745
+ DEBUG [c2904ff7] Finished in 0.041 seconds with exit status 0 (successful).
+  INFO [f7287912] Running /usr/bin/env rm -rf /usr/share/nginx/node/releases/20171124100508 as deploy@172.17.0.2
+ DEBUG [f7287912] Command: /usr/bin/env rm -rf /usr/share/nginx/node/releases/20171124100508
+  INFO [f7287912] Finished in 0.071 seconds with exit status 0 (successful).
+ DEBUG [f5048ff7] Running if test ! -d /usr/share/nginx/node/releases; then echo "Directory does not exist '/usr/share/nginx/node/releases'" 1>&2; false; fi as deploy@172.17.0.2
+ DEBUG [f5048ff7] Command: if test ! -d /usr/share/nginx/node/releases; then echo "Directory does not exist '/usr/share/nginx/node/releases'" 1>&2; false; fi
+ DEBUG [f5048ff7] Finished in 0.039 seconds with exit status 0 (successful).
+  INFO [f8fce89c] Running /usr/bin/env echo "Branch nodeapp (at 90943459ef53f5b7a81a427df53b9184c31c6555) deployed as release 20171127045745 by cloud" >> /usr/share/nginx/node/revisions.log as deploy@172.17.0.2
+ DEBUG [f8fce89c] Command: cd /usr/share/nginx/node/releases && /usr/bin/env echo "Branch nodeapp (at 90943459ef53f5b7a81a427df53b9184c31c6555) deployed as release 20171127045745 by cloud" >> /usr/share/nginx/node/revisions.log
+  INFO [f8fce89c] Finished in 0.041 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-11-27 10:28:03 +0530 cap staging npm:start
+  INFO ---------------------------------------------------------------------------
+  INFO [fe81eb39] Running cd /usr/share/nginx/node/current/ && npm start as deploy@172.17.0.2
+ DEBUG [fe81eb39] Command: cd /usr/share/nginx/node/current/ && npm start
+  INFO [fe81eb39] Finished in 0.389 seconds with exit status 0 (successful).
